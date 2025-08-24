@@ -22,28 +22,22 @@ html = """
   </ul>
 </nav>
 """
-
+"""
 # 3. HTML 파싱작업
 bs = BeautifulSoup(html, 'html.parser')
 
-a_tags = bs.select('a')
+# 첫번째로 일치하는 단일 요소 접근
 a_tag = bs.select_one('a')
+
+# 모든 일치하는 요소로 접근할 때 사용, 리스트로 반환
+a_tags = bs.select('a')
 print(a_tag)
 
+# get_text() : 해당 엘리먼트가 품고있는 텍스트 추출
 for tags in a_tags:
-  print(tags.get('href'))
- # 대가로로 감싸져 있음.리스트로 변환되었음.
-
-"""
-
-    # 4. BeautifulSoup 객체 생성
-    soup = BeautifulSoup(html, "html.parser")
-
-    # 5. 원하는 데이터 추출 (예: a 태그 중 class="nav" 찾기)
-    links = soup.find_all("a")
-
-    for link in links[:10]:  # 처음 10개만 출력
-        print(link.get_text(), "➡", link.get("href"))
-else:
-    print("웹 요청 실패:", response.status_code)
+  print(tags.get_text()) 
+  
+# get('href') : 해당 엘리먼트가 가지고 있는 속성값을 추출출
+for tags in a_tags:
+  print(tags.get('href')) 
 """
