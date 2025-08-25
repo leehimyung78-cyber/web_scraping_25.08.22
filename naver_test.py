@@ -1,7 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 
-# 네이버부동산뉴스 1개 크롤링
+# 네이버부동산뉴스 1개 제목만 크롤링
 url = 'https://n.news.naver.com/article/648/0000039129'
 
 # rest : response의 약자
